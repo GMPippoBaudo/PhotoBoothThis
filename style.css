@@ -1,0 +1,131 @@
+@font-face {
+    font-family: 'Cartiso';
+    src: url('fonts/cartiso-font/Cartiso-5ywBx.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SuperPeanut';
+    src: url('fonts/super-peanut-font/SuperPeanut-PVAK7.ttf') format('truetype');
+}
+
+body {
+    background-color: #282c34;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    font-family: 'SuperPeanut', 'Cartiso', 'Courier New', monospace;
+    font-size: 48px;
+}
+
+.folders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.folder {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    position: relative;
+    image-rendering: pixelated;
+    border-width: 4px;
+    border-style: solid;
+    clip-path: polygon(0% 20%, 40% 20%, 40% 0%, 100% 0%, 100% 100%, 0% 100%);
+    transition: transform 0.2s;
+}
+
+.folder:hover {
+    transform: scale(1.1);
+}
+
+.folder-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 150px;
+}
+
+.folder-name {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.folder-path {
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+    
+    font-family: 'Courier New', monospace;
+}
+
+/* Media queries per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .folders-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .folder {
+        width: 80px;
+        height: 80px;
+    }
+
+    .folder-path {
+        font-size: 11px;
+        margin-top: 20px;
+    }
+}
+
+/* Per schermi molto piccoli */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .folders-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+
+    .folder {
+        width: 70px;
+        height: 70px;
+    }
+
+    .folder-path {
+        font-size: 10px;
+    }
+}
