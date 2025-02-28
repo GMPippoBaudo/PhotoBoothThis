@@ -147,67 +147,67 @@ function loadGallery() {
     else if (folderPath === 'img/Varsavia 2024') {
         const images = [
             { 
-                filename: 'varsavia1.jpg',
+                filename: 'Varsavia1.jpg',
                 location: 'Palazzo della Cultura e della Scienza',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia2.jpg',
+                filename: 'Varsavia2.jpg',
                 location: 'Città Vecchia di Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia3.jpg',
+                filename: 'Varsavia3.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia4.jpg',
+                filename: 'Varsavia4.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia5.jpg',
+                filename: 'Varsavia5.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia6.jpg',
+                filename: 'Varsavia6.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia7.jpg',
+                filename: 'Varsavia7.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia8.jpg',
+                filename: 'Varsavia8.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia9.jpg',
+                filename: 'Varsavia9.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia10.jpg',
+                filename: 'Varsavia10.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
-                filename: 'varsavia11.jpg',
+                filename: 'Varsavia11.jpg',
                 location: 'Varsavia',
                 date: '31/10/2024 - 03/11/2024',
                 camera: 'Nikon FG20 - 35 mm'
