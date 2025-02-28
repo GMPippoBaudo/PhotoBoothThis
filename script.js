@@ -2,18 +2,20 @@
 const folders = [
     { path: 'img/Various', displayName: 'Various' },
     { path: 'img/Ferragosto 2024', displayName: 'Ferragosto 2024 - Leporano' },
+    { path: 'img/Como 2024', displayName: 'Como 2024 - Lombardia' },
     { path: 'img/Varsavia 2024', displayName: 'Varsavia 2024 - Polonia' },
-    { path: 'img/Val Troncea 2025', displayName: 'Val Troncea 2025 - Pragelato' },
-    { path: 'img/Como 2024', displayName: 'Como 2024 - Lombardia' }
+    { path: 'img/Val Troncea 2025', displayName: 'Val Troncea 2025 - Pragelato' }
+    
 ];
 
 // Mappa dei colori fissi per ogni cartella
 const folderColors = {
     'img/Various': { background: 'hsl(210, 80%, 65%)', border: 'hsl(210, 80%, 45%)' },
     'img/Ferragosto 2024': { background: 'hsl(45, 80%, 65%)', border: 'hsl(45, 80%, 45%)' },
+    'img/Como 2024': { background: 'hsl(180, 80%, 65%)', border: 'hsl(180, 80%, 45%)' },
     'img/Varsavia 2024': { background: 'hsl(120, 80%, 65%)', border: 'hsl(120, 80%, 45%)' },
-    'img/Val Troncea 2025': { background: 'hsl(280, 80%, 65%)', border: 'hsl(280, 80%, 45%)' },
-    'img/Como 2024': { background: 'hsl(180, 80%, 65%)', border: 'hsl(180, 80%, 45%)' }
+    'img/Val Troncea 2025': { background: 'hsl(280, 80%, 65%)', border: 'hsl(280, 80%, 45%)' }
+    
 };
 
 function createFolderElement(folder) {
