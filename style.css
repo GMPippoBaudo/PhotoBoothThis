@@ -38,6 +38,7 @@ h1 {
     gap: 20px;
     padding: 20px;
     justify-items: center;
+    image-rendering: pixelated;
 }
 
 .folder {
@@ -48,12 +49,28 @@ h1 {
     image-rendering: pixelated;
     border-width: 4px;
     border-style: solid;
-    clip-path: polygon(0% 20%, 40% 20%, 40% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(
+        0% 25%,    /* Angolo in alto a sinistra */
+        35% 25%,   /* Inizio della linguetta */
+        35% 0%,    /* Fine della linguetta */
+        100% 0%,   /* Angolo in alto a destra */
+        100% 100%, /* Angolo in basso a destra */
+        0% 100%    /* Angolo in basso a sinistra */
+    );
     transition: transform 0.2s;
+    box-shadow: 
+        inset -4px -4px 0px rgba(0, 0, 0, 0.2),
+        inset 4px 4px 0px rgba(255, 255, 255, 0.2);
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
 }
 
 .folder:hover {
     transform: scale(1.1);
+    box-shadow: 
+        inset -6px -6px 0px rgba(0, 0, 0, 0.3),
+        inset 6px 6px 0px rgba(255, 255, 255, 0.3);
 }
 
 .folder-container {
@@ -81,8 +98,21 @@ h1 {
     color: #ffffff;
     font-size: 12px;
     text-align: center;
-    
     font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+}
+
+/* Aggiungi un effetto di "premuto" quando si clicca sulla cartella */
+.folder:active {
+    transform: scale(0.95);
+    box-shadow: 
+        inset -2px -2px 0px rgba(0, 0, 0, 0.1),
+        inset 2px 2px 0px rgba(255, 255, 255, 0.1);
 }
 
 /* Media queries per dispositivi mobili */
@@ -128,4 +158,102 @@ h1 {
     .folder-path {
         font-size: 10px;
     }
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-metadata {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 100%;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    border: 2px solid #ffd700;
+}
+
+.image-metadata p {
+    margin: 5px 0;
+}
+
+.image-metadata strong {
+    color: #ffd700;
+}
+
+/* Aggiorna il selettore .gallery-grid per gestire i nuovi container */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.lightbox .image-metadata {
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.close-button {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.close-button:hover {
+    color: #ffd700;
+}
+
+/* Aggiorna gli stili esistenti della gallery-image */
+.gallery-image {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
 }
