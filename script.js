@@ -1,10 +1,11 @@
 // Struttura esempio delle cartelle (da modificare con le tue cartelle reali)
 const folders = [
-    { path: 'img/Various', displayName: 'Various' },
-    { path: 'img/Ferragosto 2024', displayName: 'Ferragosto 2024 - Leporano' },
-    { path: 'img/Como 2024', displayName: 'Lago di Como 2024 - Abbadia Lariana' },
-    { path: 'img/Varsavia 2024', displayName: 'Varsavia 2024 - Polonia' },
-    { path: 'img/Val Troncea 2025', displayName: 'Val Troncea 2025 - Pragelato' }
+    { path: 'img/Various', displayName: 'Various 📸' },
+    { path: 'img/Ferragosto 2024', displayName: 'Ferragosto 2024 - Leporano 🇮🇹' },
+    { path: 'img/Como 2024', displayName: 'Lago di Como 2024 - Abbadia Lariana 🇮🇹' },
+    { path: 'img/Varsavia 2024', displayName: 'Varsavia 2024 - Polonia 🇵🇱' },
+    { path: 'img/Lugano 2024', displayName: 'Lugano 2024 - Svizzera 🇨🇭' },
+    { path: 'img/Val Troncea 2025', displayName: 'Val Troncea 2025 - Pragelato 🇮🇹' }
     
 ];
 
@@ -14,6 +15,7 @@ const folderColors = {
     'img/Ferragosto 2024': { background: 'hsl(45, 80%, 65%)', border: 'hsl(45, 80%, 45%)' },
     'img/Como 2024': { background: 'hsl(180, 80%, 65%)', border: 'hsl(180, 80%, 45%)' },
     'img/Varsavia 2024': { background: 'hsl(120, 80%, 65%)', border: 'hsl(120, 80%, 45%)' },
+    'img/Lugano 2024': { background: 'hsl(9, 83.30%, 44.50%)', border: 'hsl(13, 96.00%, 49.20%)' },
     'img/Val Troncea 2025': { background: 'hsl(280, 80%, 65%)', border: 'hsl(280, 80%, 45%)' }
     
 };

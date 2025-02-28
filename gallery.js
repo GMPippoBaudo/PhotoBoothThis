@@ -16,7 +16,14 @@ function loadGallery() {
                 location: 'Pavia',
                 date: 'TBD',
                 camera: 'Nikon FG20 - 35 mm'
+            },
+            { 
+                filename: 'var3.JPG',
+                location: 'Torino',
+                date: '25/02/2024',
+                camera: 'Shot on IPhone'
             }
+
         ];
         loadImages(images, folderPath);
     } 
@@ -215,6 +222,30 @@ function loadGallery() {
         ];
         loadImages(images, folderPath);
     }
+    else if (folderPath === 'img/Lugano 2024') {
+        const images = [
+            { 
+                filename: 'Lug1.JPG',
+                location: 'Pavia',
+                date: '07/12/2024',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'Lug2.JPG',
+                location: 'Pavia',
+                date: '07/12/2024',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'Lug3.JPG',
+                location: 'Lugano - Piazza della Riforma',
+                date: '07/12/2024',
+                camera: 'Sony α6000'
+            }
+
+        ];
+        loadImages(images, folderPath);
+    } 
     else {
         // Per le altre cartelle, creiamo oggetti immagine con metadati di default
         const images = [];
