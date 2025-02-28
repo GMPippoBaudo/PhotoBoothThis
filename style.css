@@ -171,17 +171,18 @@ h1 {
 .image-metadata {
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
     border-radius: 4px;
     width: 100%;
     font-family: 'Courier New', monospace;
     font-size: 14px;
     border: 2px solid #ffd700;
+    box-sizing: border-box;
 }
 
 .image-metadata p {
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
 .image-metadata strong {
@@ -211,18 +212,19 @@ h1 {
 
 .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 95%;
+    max-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px;
 }
 
 .lightbox-content img {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 60vh;
     object-fit: contain;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .lightbox .image-metadata {
@@ -233,10 +235,10 @@ h1 {
 
 .close-button {
     position: absolute;
-    top: -40px;
-    right: -40px;
+    top: -30px;
+    right: -10px;
     color: #fff;
-    font-size: 40px;
+    font-size: 32px;
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -256,4 +258,127 @@ h1 {
 
 .gallery-image:hover {
     transform: scale(1.05);
+}
+
+/* Media queries per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .gallery-image {
+        height: 150px;
+    }
+
+    .lightbox-content {
+        max-width: 98%;
+    }
+
+    .close-button {
+        top: -30px;
+        right: -10px;
+        font-size: 32px;
+    }
+
+    .image-metadata {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .image-metadata p {
+        margin: 4px 0;
+    }
+
+    .back-button {
+        padding: 8px 16px;
+        margin: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Per schermi molto piccoli */
+@media screen and (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .gallery-image {
+        height: 120px;
+    }
+
+    .lightbox-content img {
+        max-height: 50vh;
+    }
+
+    .image-metadata {
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    .close-button {
+        top: -25px;
+        right: -5px;
+        font-size: 28px;
+    }
+
+    .back-button {
+        padding: 6px 12px;
+        margin: 8px;
+        font-size: 12px;
+    }
+}
+
+/* Aggiungi supporto per l'orientamento landscape su mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .lightbox-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .lightbox-content img {
+        max-height: 80vh;
+        max-width: 60%;
+        margin-bottom: 0;
+    }
+
+    .image-metadata {
+        max-width: 35%;
+        margin-top: 0;
+    }
+}
+
+/* Previeni lo zoom su input e select su iOS */
+@supports (-webkit-touch-callout: none) {
+    input,
+    select {
+        font-size: 16px;
+    }
+}
+
+/* Migliora la leggibilità del testo su schermi piccoli */
+@media screen and (max-width: 320px) {
+    .image-metadata {
+        font-size: 10px;
+    }
+
+    .back-button {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+/* Ottimizza il touch target per dispositivi mobili */
+.close-button,
+.back-button {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
