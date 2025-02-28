@@ -8,14 +8,14 @@ function loadGallery() {
             { 
                 filename: 'PICT0001.JPG',
                 location: 'Pavia',
-                date: '2024-01-01',
+                date: 'TBD',
                 camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'PICT0007.JPG',
-                location: 'Location 2',
-                date: '2024-01-02',
-                camera: 'Canon EOS R'
+                location: 'Pavia',
+                date: 'TBD',
+                camera: 'Nikon FG20 - 35 mm'
             }
         ];
         loadImages(images, folderPath);
@@ -107,39 +107,39 @@ function loadGallery() {
         const images = [
             { 
                 filename: 'como1.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'como2.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'como3.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'como4.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'como5.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             },
             { 
                 filename: 'como6.jpg',
-                location: 'Como',
-                date: '2024-02-20',
-                camera: 'Canon EOS R'
+                location: 'Lago di Como - Abbadia Lariana',
+                date: '21/09/2024',
+                camera: 'Nikon FG20 - 35 mm'
             }
         ];
         loadImages(images, folderPath);

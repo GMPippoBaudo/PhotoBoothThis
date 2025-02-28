@@ -2,7 +2,7 @@
 const folders = [
     { path: 'img/Various', displayName: 'Various' },
     { path: 'img/Ferragosto 2024', displayName: 'Ferragosto 2024 - Leporano' },
-    { path: 'img/Como 2024', displayName: 'Como 2024 - Lombardia' },
+    { path: 'img/Como 2024', displayName: 'Lago di Como 2024 - Abbadia Lariana' },
     { path: 'img/Varsavia 2024', displayName: 'Varsavia 2024 - Polonia' },
     { path: 'img/Val Troncea 2025', displayName: 'Val Troncea 2025 - Pragelato' }
     
