@@ -226,19 +226,25 @@ function loadGallery() {
         const images = [
             { 
                 filename: 'Lug1.JPG',
-                location: 'Pavia',
+                location: 'Lugano',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             },
             { 
                 filename: 'Lug2.JPG',
-                location: 'Pavia',
+                location: 'Piazza della Riforma',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             },
             { 
                 filename: 'Lug3.JPG',
-                location: 'Lugano - Piazza della Riforma',
+                location: 'Piazza della Riforma',
+                date: '07/12/2024',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'Lug4.JPG',
+                location: 'Lago di Lugano',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             }
