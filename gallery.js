@@ -225,25 +225,25 @@ function loadGallery() {
     else if (folderPath === 'img/Lugano 2024') {
         const images = [
             { 
-                filename: 'Lug1.JPG',
+                filename: 'Lug1.jpg',
                 location: 'Lugano',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             },
             { 
-                filename: 'Lug2.JPG',
+                filename: 'Lug2.jpg',
                 location: 'Piazza della Riforma',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             },
             { 
-                filename: 'Lug3.JPG',
+                filename: 'Lug3.jpg',
                 location: 'Piazza della Riforma',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
             },
             { 
-                filename: 'Lug4.JPG',
+                filename: 'Lug4.jpg',
                 location: 'Lago di Lugano',
                 date: '07/12/2024',
                 camera: 'Sony α6000'
