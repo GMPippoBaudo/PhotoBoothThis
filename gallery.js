@@ -358,8 +358,16 @@ function loadGallery() {
 
 function loadImages(images, folderPath) {
     const galleryContainer = document.getElementById('gallery-container');
-    galleryContainer.className = 'gallery-grid';
     
+    // Create the grid container directly without header
+    const imageGrid = document.createElement('div');
+    imageGrid.className = 'gallery-grid';
+    
+    // Clear any previous content and add only the grid
+    galleryContainer.innerHTML = '';
+    galleryContainer.appendChild(imageGrid);
+    
+    // Add the images to the grid
     images.forEach((imageData) => {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
@@ -369,18 +377,10 @@ function loadImages(images, folderPath) {
         img.className = 'gallery-image';
         img.alt = imageData.filename;
         
-        const metadata = document.createElement('div');
-        metadata.className = 'image-metadata';
-        metadata.innerHTML = `
-            <p><strong>${imageData.location}</strong></p>
-            <p style="color: #999;">${imageData.date} • ${imageData.camera}</p>
-        `;
-        
         imageContainer.appendChild(img);
-        imageContainer.appendChild(metadata);
-        galleryContainer.appendChild(imageContainer);
-
-        // Click handler per il lightbox
+        imageGrid.appendChild(imageContainer);
+        
+        // Click handler for the lightbox
         imageContainer.addEventListener('click', () => {
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
@@ -392,6 +392,13 @@ function loadImages(images, folderPath) {
             fullImg.src = img.src;
             fullImg.className = 'lightbox-image';
             
+            const metadata = document.createElement('div');
+            metadata.className = 'image-metadata';
+            metadata.innerHTML = `
+                <p><strong>${imageData.location}</strong></p>
+                <p style="color: #999;">${imageData.date} • ${imageData.camera}</p>
+            `;
+            
             const closeButton = document.createElement('button');
             closeButton.innerHTML = '×';
             closeButton.className = 'close-button';
@@ -399,6 +406,7 @@ function loadImages(images, folderPath) {
             
             content.appendChild(closeButton);
             content.appendChild(fullImg);
+            content.appendChild(metadata);
             lightbox.appendChild(content);
             document.body.appendChild(lightbox);
             
