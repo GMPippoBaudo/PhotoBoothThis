@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Photobooththis</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
     <div class="container">
+        <div class="header-trigger"></div>
         <div class="header">
             <h1>Photobooththis</h1>
             <a href="https://www.instagram.com/photobooththis/" target="_blank" class="instagram-link">
@@ -16,8 +20,12 @@
                 </svg>
             </a>
         </div>
-        <div id="folders-container" class="folders-grid">
-            <!-- Le cartelle verranno generate dinamicamente qui -->
+        <div id="coordinate-display" class="coordinate-display"></div>
+        <div id="map" class="map-container"></div>
+        <div class="gallery-overlay" id="gallery-overlay">
+            <div class="gallery-content" id="gallery-content">
+                <!-- Photos will be loaded here when a location is selected -->
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
