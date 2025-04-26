@@ -364,27 +364,57 @@ function loadImages(images, folderPath) {
     images.forEach((imageData, index) => {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
-        imageContainer.style.setProperty('--i', index + 1);
         
         const img = document.createElement('img');
         img.src = `${folderPath}/${imageData.filename}`;
         img.className = 'gallery-image';
         img.alt = imageData.filename;
         
-        const metadata = document.createElement('div');
-        metadata.className = 'image-metadata';
-        metadata.innerHTML = `
-            <p><strong>Luogo:</strong> ${imageData.location}</p>
-            <p><strong>Data:</strong> ${imageData.date}</p>
-            <p><strong>Camera:</strong> ${imageData.camera}</p>
-        `;
-        
         imageContainer.appendChild(img);
-        imageContainer.appendChild(metadata);
         galleryContainer.appendChild(imageContainer);
         
-        img.addEventListener('click', () => {
-            createLightbox(imageData, folderPath);
+        // Click handler per aprire il lightbox
+        imageContainer.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            
+            const content = document.createElement('div');
+            content.className = 'lightbox-content';
+            
+            const fullImg = document.createElement('img');
+            fullImg.src = img.src;
+            fullImg.className = 'lightbox-image';
+            
+            const metadata = document.createElement('div');
+            metadata.className = 'image-metadata';
+            metadata.innerHTML = `
+                <p><strong>Luogo:</strong> ${imageData.location}</p>
+                <p><strong>Data:</strong> ${imageData.date}</p>
+                <p><strong>Camera:</strong> ${imageData.camera}</p>
+            `;
+            
+            const closeButton = document.createElement('button');
+            closeButton.innerHTML = '×';
+            closeButton.className = 'close-button';
+            closeButton.onclick = () => lightbox.remove();
+            
+            content.appendChild(closeButton);
+            content.appendChild(fullImg);
+            content.appendChild(metadata);
+            lightbox.appendChild(content);
+            document.body.appendChild(lightbox);
+            
+            // Mostra il lightbox con una transizione
+            requestAnimationFrame(() => {
+                lightbox.style.display = 'flex';
+            });
+            
+            // Chiudi il lightbox cliccando fuori dall'immagine
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.remove();
+                }
+            });
         });
     });
 }

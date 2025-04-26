@@ -270,8 +270,9 @@ h1 {
     }
 
     .gallery-grid {
-        gap: 5px; /* Riduci lo spazio tra le immagini */
-        padding: 5px; /* Riduci il padding */
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        padding: 10px;
     }
 
     .image-container {
@@ -349,8 +350,9 @@ h1 {
     }
 
     .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
         gap: 3px;
-        padding: 3px;
+        padding: 5px;
     }
 
     /* Rimuovi le dimensioni fisse per le immagini su mobile */
@@ -449,122 +451,46 @@ h1 {
     }
 }
 
-.image-container {
-    position: relative;
-    width: 100%;
+/* Sostituisci gli stili esistenti della gallery-grid e image-container con questi */
+.gallery-grid {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
     align-items: center;
 }
 
-.image-metadata {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 4px;
-    width: 100%;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    border: 2px solid #ffd700;
-}
-
-.image-metadata p {
-    margin: 5px 0;
-}
-
-.image-metadata strong {
-    color: #ffd700;
-}
-
-/* Aggiorna il selettore .gallery-grid per gestire i nuovi container */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 250px;
-    grid-auto-flow: dense;
-    gap: 15px;
-    padding: 20px;
-    max-width: 1800px;
-    margin: 0 auto;
-}
-
 .image-container {
     position: relative;
-    grid-column: span 1;
-    grid-row: span 1;
-    overflow: hidden;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-/* Rendi alcune immagini più grandi in modo casuale */
-.image-container:nth-child(4n) {
-    grid-column: span 2;
-    grid-row: span 2;
-}
-
-.image-container:nth-child(8n) {
-    grid-column: span 2;
-    grid-row: span 1;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+    display: block;
     transition: transform 0.3s ease;
 }
 
+/* Hover effect più sottile */
 .image-container:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    z-index: 2;
+    transform: scale(1.01);
 }
 
-.image-container:hover .gallery-image {
-    transform: scale(1.1);
-}
-
-/* Stile per i metadati dell'immagine */
-.image-metadata {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 15px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.image-container:hover .image-metadata {
-    transform: translateY(0);
-}
-
-/* Animazione di caricamento */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.image-container {
-    animation: fadeIn 0.5s ease forwards;
-    opacity: 0;
-}
-
-.image-container:nth-child(n) {
-    animation-delay: calc(0.1s * var(--i, 1));
-}
-
+/* Stili per il lightbox */
 .lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -572,64 +498,32 @@ h1 {
 
 .lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90vh;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.lightbox-content img {
-    max-width: 100%;
-    max-height: 70vh;
+.lightbox-image {
+    max-width: 95vw;
+    max-height: 90vh;
     object-fit: contain;
-    margin-bottom: 20px;
 }
 
-.lightbox .image-metadata {
-    background-color: rgba(0, 0, 0, 0.8);
-    max-width: 500px;
-    margin-top: 20px;
+/* Media query per dispositivi mobili */
+@media screen and (max-width: 768px) {
+    .gallery-grid {
+        gap: 20px;
+        padding: 10px;
+    }
 }
 
-.close-button {
-    position: absolute;
-    top: -30px;
-    right: -10px;
-    color: #ff0000;
-    font-size: 40px;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-}
-
-.close-button:hover {
-    color: #ffd700;
-}
-
-/* Modifica lo stile del pulsante Back */
-.back-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #ffd700;
-    color: #000;
-    text-decoration: none;
-    margin: 20px;
-    border: 4px solid #b39700;
-    transition: all 0.2s ease;
-}
-
-.back-button:hover {
-    background-color: #ffed4a;
-    border-color: #ffd700;
-    transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-}
-
-.back-button:active {
-    transform: scale(0.95);
+@media screen and (max-width: 480px) {
+    .gallery-grid {
+        gap: 15px;
+        padding: 5px;
+    }
 }
 
 /* Replace the existing marker styles with these */
