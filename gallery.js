@@ -356,12 +356,11 @@ function loadGallery() {
     }
 }
 
-// Funzione helper modificata per gestire i metadati
 function loadImages(images, folderPath) {
     const galleryContainer = document.getElementById('gallery-container');
     galleryContainer.className = 'gallery-grid';
     
-    images.forEach((imageData, index) => {
+    images.forEach((imageData) => {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
         
@@ -370,10 +369,18 @@ function loadImages(images, folderPath) {
         img.className = 'gallery-image';
         img.alt = imageData.filename;
         
-        imageContainer.appendChild(img);
-        galleryContainer.appendChild(imageContainer);
+        const metadata = document.createElement('div');
+        metadata.className = 'image-metadata';
+        metadata.innerHTML = `
+            <p><strong>${imageData.location}</strong></p>
+            <p style="color: #999;">${imageData.date} • ${imageData.camera}</p>
+        `;
         
-        // Click handler per aprire il lightbox
+        imageContainer.appendChild(img);
+        imageContainer.appendChild(metadata);
+        galleryContainer.appendChild(imageContainer);
+
+        // Click handler per il lightbox
         imageContainer.addEventListener('click', () => {
             const lightbox = document.createElement('div');
             lightbox.className = 'lightbox';
@@ -385,14 +392,6 @@ function loadImages(images, folderPath) {
             fullImg.src = img.src;
             fullImg.className = 'lightbox-image';
             
-            const metadata = document.createElement('div');
-            metadata.className = 'image-metadata';
-            metadata.innerHTML = `
-                <p><strong>Luogo:</strong> ${imageData.location}</p>
-                <p><strong>Data:</strong> ${imageData.date}</p>
-                <p><strong>Camera:</strong> ${imageData.camera}</p>
-            `;
-            
             const closeButton = document.createElement('button');
             closeButton.innerHTML = '×';
             closeButton.className = 'close-button';
@@ -400,16 +399,13 @@ function loadImages(images, folderPath) {
             
             content.appendChild(closeButton);
             content.appendChild(fullImg);
-            content.appendChild(metadata);
             lightbox.appendChild(content);
             document.body.appendChild(lightbox);
             
-            // Mostra il lightbox con una transizione
             requestAnimationFrame(() => {
                 lightbox.style.display = 'flex';
             });
             
-            // Chiudi il lightbox cliccando fuori dall'immagine
             lightbox.addEventListener('click', (e) => {
                 if (e.target === lightbox) {
                     lightbox.remove();
