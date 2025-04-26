@@ -359,10 +359,12 @@ function loadGallery() {
 // Funzione helper modificata per gestire i metadati
 function loadImages(images, folderPath) {
     const galleryContainer = document.getElementById('gallery-container');
+    galleryContainer.className = 'gallery-grid';
     
-    images.forEach(imageData => {
+    images.forEach((imageData, index) => {
         const imageContainer = document.createElement('div');
         imageContainer.className = 'image-container';
+        imageContainer.style.setProperty('--i', index + 1);
         
         const img = document.createElement('img');
         img.src = `${folderPath}/${imageData.filename}`;
@@ -376,51 +378,14 @@ function loadImages(images, folderPath) {
             <p><strong>Data:</strong> ${imageData.date}</p>
             <p><strong>Camera:</strong> ${imageData.camera}</p>
         `;
-        metadata.style.display = 'none';
-        
-        // Creiamo un div per il lightbox
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox';
-        lightbox.style.display = 'none';
-        
-        const lightboxContent = document.createElement('div');
-        lightboxContent.className = 'lightbox-content';
-        
-        const lightboxImage = document.createElement('img');
-        lightboxImage.src = img.src;
-        
-        const lightboxMetadata = metadata.cloneNode(true);
-        lightboxMetadata.style.display = 'block';
-        
-        const closeButton = document.createElement('span');
-        closeButton.className = 'close-button';
-        closeButton.innerHTML = '×';
-        
-        lightboxContent.appendChild(closeButton);
-        lightboxContent.appendChild(lightboxImage);
-        lightboxContent.appendChild(lightboxMetadata);
-        lightbox.appendChild(lightboxContent);
-        document.body.appendChild(lightbox);
-        
-        img.addEventListener('click', () => {
-            lightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeButton.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
         
         imageContainer.appendChild(img);
+        imageContainer.appendChild(metadata);
         galleryContainer.appendChild(imageContainer);
+        
+        img.addEventListener('click', () => {
+            createLightbox(imageData, folderPath);
+        });
     });
 }
 
