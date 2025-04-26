@@ -455,8 +455,8 @@ h1 {
 .gallery-grid {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    padding: 20px;
+    gap: 40px;  /* Aumentato lo spazio tra le immagini */
+    padding: 40px 20px;  /* Aumentato il padding verticale */
     max-width: 100%;
     margin: 0 auto;
     align-items: center;
@@ -468,6 +468,7 @@ h1 {
     height: auto;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-bottom: 20px;  /* Aggiunto margine sotto ogni immagine */
 }
 
 .gallery-image {
@@ -514,15 +515,27 @@ h1 {
 /* Media query per dispositivi mobili */
 @media screen and (max-width: 768px) {
     .gallery-grid {
-        gap: 20px;
-        padding: 10px;
+        gap: 30px;  /* Spazio leggermente ridotto ma ancora significativo per tablet */
+        padding: 30px 15px;
+    }
+
+    .gallery-content {
+        padding: 20px;  /* Aumentato il padding del contenitore */
     }
 }
 
 @media screen and (max-width: 480px) {
     .gallery-grid {
-        gap: 15px;
-        padding: 5px;
+        gap: 25px;  /* Spazio ancora significativo per mobile */
+        padding: 20px 10px;
+    }
+
+    .image-container {
+        margin-bottom: 15px;  /* Margine leggermente ridotto per mobile */
+    }
+
+    .gallery-content {
+        padding: 15px;
     }
 }
 
