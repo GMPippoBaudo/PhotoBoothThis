@@ -281,7 +281,7 @@ h1 {
 
     /* Rimuovi i margini e il padding extra */
     .gallery-content {
-        padding: 0;
+        padding: 10px;
     }
 
     /* Aggiusta il lightbox per mobile */
