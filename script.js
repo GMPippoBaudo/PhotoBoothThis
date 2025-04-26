@@ -94,8 +94,33 @@ const locations = [
         coordinates: { lat: 40.4733, lng: 17.235 },
         folder: 'img/Taranto 2025',
         displayName: 'Taranto'
+    },
+    {
+        name: 'Genova',
+        coordinates: { lat: 44.4084, lng: 8.9249 },
+        folder: 'img/Genova 2025',
+        displayName: 'Genova'
     }
 ];
+
+// Add this after the locations array
+const markerColors = [
+    '#FF6B6B', // coral red
+    '#4ECDC4', // turquoise
+    '#45B7D1', // sky blue
+    '#96CEB4', // sage green
+    '#FFEEAD', // cream yellow
+    '#D4A5A5', // dusty rose
+    '#9B59B6', // purple
+    '#3498DB', // blue
+    '#E67E22', // orange
+    '#2ECC71'  // emerald green
+];
+
+// Function to get a random color from the array
+function getRandomColor() {
+    return markerColors[Math.floor(Math.random() * markerColors.length)];
+}
 
 function initMap() {
     const map = L.map('map', {
@@ -144,10 +169,12 @@ function initMap() {
 
     // Add markers for each location
     locations.forEach(location => {
-        // Create custom icon for the marker
+        const markerColor = getRandomColor();
+        
+        // Create custom icon for the marker with random color
         const customIcon = L.divIcon({
             className: 'custom-marker',
-            html: '<div class="marker-pulse"></div>',
+            html: `<div class="marker-pulse" style="background-color: ${markerColor};"></div>`,
             iconSize: [20, 20],
             iconAnchor: [10, 10]
         });
@@ -195,7 +222,6 @@ function updateCoordinateDisplay(latlng) {
     const lat = latlng.lat.toFixed(4);
     const lng = latlng.lng.toFixed(4);
     
-    // Find the closest location
     let closestLocation = null;
     let closestDistance = Infinity;
     
@@ -213,31 +239,4 @@ function updateCoordinateDisplay(latlng) {
 
     coordinateDisplay.innerHTML = `Coordinates: [${lat}, ${lng}]${locationText}`;
     coordinateDisplay.classList.add('visible');
-}
-
-// Add this function to help with calibration
-function toggleCalibrationMode() {
-    const mapContainer = document.getElementById('map-container');
-    let isCalibrationMode = false;
-
-    document.addEventListener('keypress', (e) => {
-        if (e.key === 'c') { // Press 'c' to toggle calibration mode
-            isCalibrationMode = !isCalibrationMode;
-            console.log('Calibration mode:', isCalibrationMode ? 'ON' : 'OFF');
-        }
-    });
-
-    mapContainer.addEventListener('click', (e) => {
-        if (!isCalibrationMode) return;
-
-        // Get click position relative to the map container
-        const rect = mapContainer.getBoundingClientRect();
-        const scrollLeft = mapContainer.scrollLeft;
-        const scrollTop = mapContainer.scrollTop;
-        
-        const x = ((e.clientX - rect.left + scrollLeft) / mapContainer.scrollWidth) * 100;
-        const y = ((e.clientY - rect.top + scrollTop) / mapContainer.scrollHeight) * 100;
-        
-        console.log(`Clicked at position: x: ${x.toFixed(2)}%, y: ${y.toFixed(2)}%`);
-    });
 }

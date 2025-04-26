@@ -538,11 +538,11 @@ h1 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #ffd700;
     border-radius: 50%;
     animation: pulse 2s infinite;
     left: 0;
     top: 0;
+    background-color: inherit; /* This will inherit the color from the parent */
 }
 
 @keyframes pulse {

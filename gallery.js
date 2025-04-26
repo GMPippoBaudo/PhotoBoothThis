@@ -268,7 +268,79 @@ function loadGallery() {
             },
         ];
         loadImages(images, folderPath);
-    } 
+    }
+    else if (folderPath === 'img/Genova 2025') {
+        const images = [
+            { 
+                filename: 'G2.jpg',
+                location: 'Genova',
+                date: '06/04/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'G3.jpg',
+                location: 'Genova',
+                date: '06/04/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'G1.jpg',
+                location: 'Genova',
+                date: '06/04/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'G4.jpg',
+                location: 'Genova',
+                date: '06/04/2025',
+                camera: 'Sony α6000'
+            }
+
+        ];
+        loadImages(images, folderPath);
+    }
+    else if (folderPath === 'img/Val Troncea 2025') {
+        const images = [
+            { 
+                filename: 'ValTroncea2025_1.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'ValTroncea2025_2.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'ValTroncea2025_3.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'ValTroncea2025_4.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'ValTroncea2025_5.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            },
+            { 
+                filename: 'ValTroncea2025_6.png',
+                location: 'Val Troncea',
+                date: '15/02/2025',
+                camera: 'Sony α6000'
+            }
+
+        ];
+        loadImages(images, folderPath);
+    }
     else {
         // Per le altre cartelle, creiamo oggetti immagine con metadati di default
         const images = [];
