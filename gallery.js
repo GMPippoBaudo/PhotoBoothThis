@@ -252,6 +252,23 @@ function loadGallery() {
         ];
         loadImages(images, folderPath);
     } 
+    else if (folderPath === 'img/Taranto 2025') {
+        const images = [
+            { 
+                filename: 'mod1.jpg',
+                location: 'Taranto - Nave Amerigo Vespucci',
+                date: '18/04/2025',
+                camera: 'IPhone 13 Pro'
+            },
+            { 
+                filename: 'mod2.jpg',
+                location: 'Taranto - Castello Aragonese',
+                date: '18/04/2025',
+                camera: 'IPhone 13 Pro'
+            },
+        ];
+        loadImages(images, folderPath);
+    } 
     else {
         // Per le altre cartelle, creiamo oggetti immagine con metadati di default
         const images = [];

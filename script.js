@@ -61,33 +61,39 @@ document.addEventListener('DOMContentLoaded', initializeFolders);
 const locations = [
     {
         name: 'Leporano',
-        coordinates: { lat: 40.3768, lng: 17.3015 },
+        coordinates: { lat: 40.386890, lng: 17.300567 },
         folder: 'img/Ferragosto 2024',
-        displayName: 'Ferragosto 2024 - Leporano 🍖'
+        displayName: 'Leporano'
     },
     {
-        name: 'Como',
-        coordinates: { lat: 45.8081, lng: 9.0852 },
+        name: 'Abbadia Lariana',
+        coordinates: { lat: 45.902538, lng: 9.330740 },
         folder: 'img/Como 2024',
-        displayName: 'Lago di Como 2024 - Abbadia Lariana 🦆'
+        displayName: 'Abbadia Lariana'
     },
     {
         name: 'Varsavia',
         coordinates: { lat: 52.2297, lng: 21.0122 },
         folder: 'img/Varsavia 2024',
-        displayName: 'Varsavia 2024 - Polonia 🇵🇱'
+        displayName: 'Varsavia'
     },
     {
         name: 'Lugano',
         coordinates: { lat: 46.0037, lng: 8.9511 },
         folder: 'img/Lugano 2024',
-        displayName: 'Lugano 2024 - Svizzera 🇨🇭'
+        displayName: 'Lugano'
     },
     {
         name: 'Val Troncea',
-        coordinates: { lat: 44.9613, lng: 6.9420 },
+        coordinates: { lat: 44.9532, lng: 6.9522 },
         folder: 'img/Val Troncea 2025',
-        displayName: 'Val Troncea 2025 - Pragelato 🏔️'
+        displayName: 'Val Troncea'
+    },
+    {
+        name: 'Taranto',
+        coordinates: { lat: 40.4733, lng: 17.235 },
+        folder: 'img/Taranto 2025',
+        displayName: 'Taranto'
     }
 ];
 
